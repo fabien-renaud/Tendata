@@ -4,6 +4,7 @@
 #include <iostream>
 #include <windows.h>
 #using <System.dll>
+//#include "paho/mqtt/async_client.h"
 using namespace std;
 using namespace System;
 using namespace System::Collections;
@@ -18,6 +19,7 @@ public:
 	void getData(PerformanceCounter^ CPUCounter);
 	double getPerVMemory();
 	double getPerPMemory();
+	void sendData();
 
 private: 
 	// RAM Usage

@@ -7,10 +7,6 @@ Tendata::Tendata() {
 Tendata::~Tendata() {
 }
 
-void Tendata::createCounter(PerformanceCounter^% CPUCounter) {
-	CPUCounter = gcnew PerformanceCounter("Processor", "% Processor Time", "_Total");
-}
-
 void Tendata::getData(PerformanceCounter^ CPUCounter) {
 	// get all memory info
 	MEMORYSTATUSEX memInfo;
@@ -51,7 +47,9 @@ void Tendata::sendData() {
 int main() {
 	Tendata *tendata = new Tendata();
 	PerformanceCounter^ CPUCounter;
-	tendata->createCounter(CPUCounter);
+	PerformanceCounter^ AlimCounter;
+	CPUCounter = gcnew PerformanceCounter("Processor", "% Processor Time", "_Total");
+	AlimCounter = gcnew PerformanceCounter("Energy Counter", "Energy");
 	while (1) {
 		tendata->getData(CPUCounter);
 		Sleep(1000);

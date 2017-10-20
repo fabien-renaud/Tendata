@@ -15,7 +15,6 @@ class Tendata {
 public:
 	Tendata();
 	~Tendata();
-	void createCounter(PerformanceCounter^% CPUCounter);
 	void getData(PerformanceCounter^ CPUCounter);
 	double getPerVMemory();
 	double getPerPMemory();

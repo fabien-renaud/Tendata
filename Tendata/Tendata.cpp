@@ -47,9 +47,7 @@ void Tendata::sendData() {
 int main() {
 	Tendata *tendata = new Tendata();
 	PerformanceCounter^ CPUCounter;
-	PerformanceCounter^ AlimCounter;
 	CPUCounter = gcnew PerformanceCounter("Processor", "% Processor Time", "_Total");
-	AlimCounter = gcnew PerformanceCounter("Energy Counter", "Energy");
 	while (1) {
 		tendata->getData(CPUCounter);
 		Sleep(1000);
